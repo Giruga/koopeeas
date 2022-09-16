@@ -1,0 +1,23 @@
+.nav-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: whitesmoke;
+
+}
+
+.sidenav {
+  background: lightblue;
+  min-width: 150px;
+
+}
+
+ul li {
+  list-style-type: none;
+}
+
+.sidenav-content {
+  padding-left: 20px;
+}
