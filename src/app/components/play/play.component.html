@@ -1,1 +1,55 @@
-<p>play works!</p>
+<div class="sidecard-content">
+  <mat-card fxFlex class="sideCard instructions">
+    <mat-card-title>Ohjeet</mat-card-title>
+    <p>Perus simppeli kivi-paperi-sakset.</p>
+    <ul>
+      <li>Paina käynnistä nappia</li>
+      <li>2s aikaa miettiä valinta</li>
+      <li>1s aikaa tehdä valinta</li>
+      <li>Kone arpoo sinulle vastuksen -> tuloksen näet välittömästi</li>
+    </ul>
+  </mat-card>
+
+  <mat-card fxFlex class="sideCard scores">
+    <mat-card-title>Pisteet</mat-card-title>
+    <app-scores></app-scores>
+  </mat-card>
+</div>
+
+<h1>Pelaa</h1>
+<div *ngIf="currentPhase == getPhase.BEGINNING">
+  <button matButton (click)="startGame()">Käynnistä</button>
+</div>
+
+<div *ngIf="currentPhase == getPhase.THINK">
+  <h2>Mieti tarkasti</h2>
+  <ng-container *ngTemplateOutlet="valinnat">
+  </ng-container>
+</div>
+
+<div *ngIf="currentPhase == getPhase.PICK">
+  <h2>Valitse viisaasti</h2>
+  <ng-container *ngTemplateOutlet="valinnat">
+  </ng-container>
+</div>
+
+<div *ngIf="currentPhase == getPhase.RESULTS">
+  <h1>Totuuden hetki!</h1>
+  <p>Valitsit: {{getSelectionText(userSelection)}}</p>
+  <p>Vastustaja valitsi: {{getSelectionText(compSelection)}}</p>
+
+  <p>{{resultText}}</p>
+  <button matButton (click)="startGame()">Uusi kierros</button>
+</div>
+
+<ng-template #valinnat>
+  <div class="valinta">
+    <mat-card #valintaKortti [ngClass]="{ 'disabled': selectionEnabled === false, 'chosen': userSelection == 0 }"
+      (click)="selectWeapon(0)">KIVI</mat-card>
+    <mat-card #valintaKortti [ngClass]="{ 'disabled': selectionEnabled === false, 'chosen': userSelection == 1 }"
+      (click)="selectWeapon(1)">PAPERI</mat-card>
+    <mat-card #valintaKortti [ngClass]="{ 'disabled': selectionEnabled === false, 'chosen': userSelection == 2 }"
+      (click)="selectWeapon(2)">SAKSET</mat-card>
+  </div>
+  <p>{{timeLeft.toFixed(2)}}</p>
+</ng-template>

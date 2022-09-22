@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {MatSidenavModule} from '@angular/material/sidenav'
-import { NavigationComponent } from './navigation/navigation.component';
+import { AppBaseComponent } from './app-base/app-base.component';
 import { AppRoutingModule } from '../app-routing.module';
 
 @NgModule({
-  declarations: [NavigationComponent],
+  declarations: [AppBaseComponent],
   imports: [
     CommonModule,
     MatSidenavModule,
     AppRoutingModule,
   ],
   exports: [
-    NavigationComponent
+    AppBaseComponent
   ]
 })
 export class StructuralModule { }

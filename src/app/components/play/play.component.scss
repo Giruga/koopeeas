@@ -1,0 +1,38 @@
+.sideCard {
+  display: flex;
+  flex-direction: column;
+  min-width: 150px;
+  margin: 50px;
+}
+
+.sidecard-content {
+  float: right;
+  min-width: 20%;
+}
+
+.instructions {
+  background-color: lightblue;
+}
+
+.scores {
+  background-color: lightseagreen;
+}
+
+.valinta {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 350px;
+}
+
+.valinta mat-card {
+  align-content: center;
+}
+
+.valinta mat-card:hover, .chosen {
+  background: lightgreen;
+}
+
+.disabled {
+  background-color: grey;
+}

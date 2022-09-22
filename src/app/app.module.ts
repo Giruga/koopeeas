@@ -2,25 +2,23 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HomeComponent, PlayComponent, ScoresComponent } from '@components';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StructuralModule } from './structure/structural.module';
 
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { StoreModule } from '@ngrx/store';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatCardModule } from '@angular/material/card';
+
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent,
-    ScoresComponent,
-    PlayComponent
-  ],
+  declarations: [AppComponent, HomeComponent, ScoresComponent, PlayComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    StructuralModule
+    StructuralModule,
+    MatCardModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

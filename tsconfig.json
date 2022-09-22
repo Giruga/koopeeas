@@ -24,8 +24,8 @@
     ],
     "paths": {
       "@components": ["./src/app/components/index.ts"],
-      // "@services": ["./src/app/services/index.ts"],
-      // "@stores": ["./src/app/services/stores/index.ts"],
+      "@services": ["./src/app/services/index.ts"],
+      "@stores": ["./src/app/services/stores/index.ts"],
     }
   },
   "angularCompilerOptions": {
